@@ -1,0 +1,143 @@
+{
+    "window.zoomLevel": 0,
+    "terminal.integrated.fontFamily":"Hack",
+    "files.autoGuessEncoding": true,
+    "files.associations": {"*.wls": "wolfram"},
+    "files.trimTrailingWhitespace": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+    "wolfram": "wolfram -script"},
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "jupyter.jupyterServerType": "local",
+    "git.confirmSync": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "markdown.extension.tableFormatter.normalizeIndentation": true,
+    "markdown.extension.toc.orderedList": true,
+    "todo-tree.general.tags": [
+        "TO_DO",
+        "DO_THIS",
+        "DO_ON",
+        "BUG",
+        "FIX",
+        "MAIN",
+        "NOTE",
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "TO_DO": {
+            "foreground": "gray",
+            "background": "yellow",
+            "rulerColour": "yellow",
+            "iconColour": "yellow",
+            "icon": "circle",
+        },
+        "DO_THIS": {
+            "foreground": "gray",
+            "background": "lime",
+            "rulerColour": "lime",
+            "iconColour": "lime",
+            "icon": "plus-circle",
+        },
+        "DO_ON": {
+            "foreground": "gray",
+            "background": "blue",
+            "rulerColour": "blue",
+            "iconColour": "blue",
+            "icon": "issue-opened",
+        },
+        "BUG": {
+            "foreground": "gray",
+            "background": "red",
+            "rulerColour": "red",
+            "iconColour": "red",
+            "icon": "bug",
+        },
+        "FIX": {
+            "foreground": "gray",
+            "background": "maroon",
+            "rulerColour": "maroon",
+            "iconColour": "maroon",
+            "icon": "check-circle",
+        },
+        "MAIN": {
+            "foreground": "gray",
+            "background": "aqua",
+            "rulerColour": "aqua",
+            "iconColour": "aqua",
+            "icon": "question",
+        },
+        "NOTE": {
+            "foreground": "gray",
+            "background": "teal",
+            "rulerColour": "teal",
+            "iconColour": "teal",
+            "icon": "info",
+        },
+    },
+    "todo-tree.regex.regexCaseSensitive": false,
+    "todo-tree.regex.regex": "(%|//|#|<!--|;|/\\*|\\(\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",//标记如何匹配
+                            /*可以匹配以这些为开头的:
+                                "%","//","#","<!--",";","/*","(*",行开头,行开头+空白字符+"-"|空白字符
+                            */
+    "todo-tree.regex.subTagRegex": "(?:^:\\s*)?(?:(?:\\*\\)(?:<br>)?$)|(?:-->(?:<br>)?$)|(?:\\*/(?:<br>)?$))",//标记从匹配的字符串中去除
+                            /*可以匹配这一类:
+                                行开头+":"+需要的部分+"*)"|"-->"|"*\/"+"<br>"
+                            */
+                            //BUG:目前把行开头的:删除的正则是不起作用的
+                            //DO_ON:我不知道如何使用正则匹配出一个字符串开头与结尾的部分
+                            /*
+                                (?:^:\\s*)?(?:(?:\\*\\)(?:<br>)?$)|(?:-->(?:<br>)?$)|(?:\\*\/(?:<br>)?$)) //改成Rust
+                                (?:^:)|(?:\\*\\)$|-->$|\\*\/$)|(?:(?:\\*\\)|-->|\\*\/)?(?:<br>$)) //这是旧的
+                                注意:以上的正则为了让settings.json识别为注释进行了改动:*\/
+                            */
+    "todo-tree.filtering.includeGlobs": [
+        "**/*.md","**/*.txt","**/*.tex"
+    ],
+    "notebook.lineNumbers": "on",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "terminal.integrated.inheritEnv": false,
+    "todo-tree.filtering.includeHiddenFiles": true,
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": true,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": true,
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": false
+    },
+    "terminal.integrated.copyOnSelection":true,
+    "latex-workshop.latex.tools": [{
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-outdir=%OUTDIR%",
+            "%DOC%",
+            "-xelatex"
+        ],
+        "env": {}
+    },],
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": true,
+        "markdown": true
+    },
+    "editor.inlineSuggest.enabled": true,
+    "files.autoSave": "onFocusChange",
+    "editor.wordWrap": "on"
+}
